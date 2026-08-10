@@ -16,19 +16,20 @@ public class LoginPage extends CommonToAll {
     private By username = By.id("user-name");
     private By password = By.id("password");
     private By LoginButton = By.id("login-button");
+    private By error_msg = By.xpath("//h3[@data-test= 'error']");
 
     public void login(String username_val, String password_val) throws InterruptedException {
         openURL();
 
         enterUsername(username, username_val);
-        Thread.sleep(10000);
         enterPassword(password, password_val);
-        Thread.sleep(2000);
         Clickbutton(LoginButton);
-        Thread.sleep(5000);
 
     }
 
-
+    public String getErrorMsg()
+    {
+        return getErrorMessage(error_msg);
+    }
 
 }

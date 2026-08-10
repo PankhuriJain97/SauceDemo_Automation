@@ -1,6 +1,7 @@
 package com.SauceDemo.base;
 
 import com.SauceDemo.utils.PropertiesReader;
+import com.SauceDemo.utils.WaitHelpers;
 import org.openqa.selenium.By;
 
 import static com.SauceDemo.driver.DriverManager.getDriver;
@@ -24,5 +25,11 @@ public class CommonToAll {
     public void Clickbutton(By by)
     {
         getDriver().findElement(by).click();
+    }
+
+    public String getErrorMessage(By by)
+    {
+        WaitHelpers.checkVisibility(getDriver(), by);
+        return getDriver().findElement(by).getText();
     }
 }
