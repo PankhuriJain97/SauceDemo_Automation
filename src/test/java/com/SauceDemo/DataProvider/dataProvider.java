@@ -10,6 +10,11 @@ public class dataProvider {
         return UtilExcel.getTestData("LoginData.xlsx", "Valid_data");
     }
 
+    @DataProvider(name = "invalidloginData")
+    public Object[][] invalidloginData() {
+        return UtilExcel.getTestData("InvalidLoginData.xlsx", "Invalid_data");
+    }
+
     @DataProvider(name = "productData")
     public Object[][] productData() {
         return UtilExcel.getTestData("ProductData.xlsx", "Products");

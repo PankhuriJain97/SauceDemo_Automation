@@ -24,8 +24,21 @@ public class UtilExcel {
             for (int i = 0; i < totalRows; i++) {
                 for (int j = 0; j < totalColumns; j++) {
 
+
                     // First row email, password -> column name - skip - header
-                    data[i][j] = sheet.getRow(i + 1).getCell(j).toString();
+                    data[i][j] = sheet.getRow(i + 1).getCell(j);
+
+                    if(data[i][j] != null)
+                    {
+                        data[i][j] = data[i][j].toString();
+                    }
+
+                    else
+                    {
+                        data[i][j] = "";
+                    }
+
+
 
 
                 }

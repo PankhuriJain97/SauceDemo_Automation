@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="D:/Selenium_projects/SauceDemo_Automation">
+        <classes>
+            <class name="com.SauceDemo.tests.LoginTest">
+                <methods>
+                    <include name="valid_login"/>
+                    <include name="invalid_login"/>
+                    <include name="logout"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

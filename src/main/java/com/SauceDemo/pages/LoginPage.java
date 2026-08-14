@@ -1,8 +1,11 @@
 package com.SauceDemo.pages;
 
 import com.SauceDemo.base.CommonToAll;
+import com.SauceDemo.utils.WaitHelpers;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+
+import static com.SauceDemo.driver.DriverManager.getDriver;
 
 public class LoginPage extends CommonToAll {
 
@@ -24,12 +27,21 @@ public class LoginPage extends CommonToAll {
         enterUsername(username, username_val);
         enterPassword(password, password_val);
         Clickbutton(LoginButton);
+        Thread.sleep(5000);
 
     }
 
     public String getErrorMsg()
     {
         return getErrorMessage(error_msg);
+    }
+
+    public boolean isLoginPageDisplayed()
+    {
+        WaitHelpers.checkVisibility(getDriver(),username);
+        return driver.findElement(username).isDisplayed()
+                && driver.findElement(password).isDisplayed();
+
     }
 
 }
