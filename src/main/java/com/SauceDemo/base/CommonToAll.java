@@ -4,9 +4,11 @@ import com.SauceDemo.utils.PropertiesReader;
 import com.SauceDemo.utils.WaitHelpers;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
 
+import static com.SauceDemo.driver.DriverManager.driver;
 import static com.SauceDemo.driver.DriverManager.getDriver;
 
 public class CommonToAll {
@@ -40,5 +42,11 @@ public class CommonToAll {
     public List<WebElement> item_list(By by)
     {
         return getDriver().findElements(by);
+    }
+
+    public void sorting_dropdown(By by, String option)
+    {
+        Select select = new Select(driver.findElement(by));
+        select.selectByVisibleText(option);
     }
 }
