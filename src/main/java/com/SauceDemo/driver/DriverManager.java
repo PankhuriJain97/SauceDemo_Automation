@@ -9,6 +9,9 @@ import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class DriverManager {
 
     public static WebDriver driver;
@@ -41,6 +44,10 @@ public class DriverManager {
             case "chrome":
                 ChromeOptions chromeOptions = new ChromeOptions();
                 chromeOptions.addArguments("--start-maximized");
+                Map<String, Object> prefs = new HashMap<>();
+                prefs.put("profile.password_manager_leak_detection", false);
+                prefs.put("credentials_enable_service", false);
+                chromeOptions.setExperimentalOption("prefs", prefs);
                 driver = new ChromeDriver(chromeOptions);
                 break;
             case "firefox":

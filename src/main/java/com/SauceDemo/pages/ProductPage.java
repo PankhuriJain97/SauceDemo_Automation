@@ -28,6 +28,10 @@ public class ProductPage extends CommonToAll {
     private By item_price = By.xpath("//div[@data-test = 'inventory-item-price']");
     private By sort_dropdown = By.className("product_sort_container");
     private By prod_description = By.xpath("//div[@data-test = 'inventory-item-desc']");
+    private By add_to_cart = By.xpath("//button[contains(@data-test, 'add-to-cart')]");
+    private By remove = By.xpath("//button[contains(@data-test, 'remove')]");
+    private By cart_logo = By.xpath("//a[@data-test ='shopping-cart-link' ]");
+
 
 
     public void logout()
@@ -130,5 +134,50 @@ public class ProductPage extends CommonToAll {
         }
 
         return "product/description not found";
+    }
+
+    public void add_product(String productName)
+    {
+        List<WebElement> add_button = item_list(add_to_cart);
+        List<WebElement> prod_names = getAllProducts();
+
+        for (int i = 0; i < prod_names.size(); i++) {
+
+            if (prod_names.get(i).getText().equals(productName)) {
+                WebElement element = getDriver().findElement(By.xpath("//div[@class='inventory_item'][.//div[text()='"
+                        + productName + "']]//button"));
+                element.click();
+
+            }
+        }
+
+    }
+
+    public void remove_product(String productName)
+    {
+        List<WebElement> remove_btn = item_list(remove);
+        List<WebElement> prod_names = getAllProducts();
+
+
+        for (int i = 0; i < prod_names.size(); i++) {
+
+            if (prod_names.get(i).getText().equals(productName)) {
+                remove_btn.get(remove_btn.size()-1).click();
+
+            }
+        }
+
+    }
+
+    public String getCartNum()
+    {
+
+        return get_text(cart_logo);
+
+    }
+
+    public void go_to_cart()
+    {
+        Clickbutton(cart_logo);
     }
 }

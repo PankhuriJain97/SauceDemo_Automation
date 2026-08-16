@@ -3,7 +3,7 @@
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true" name="D:/Selenium_projects/SauceDemo_Automation">
         <classes>
-            <class name="com.SauceDemo.tests.LoginTest">
+            <class name="com.SauceDemo.tests.T1_LoginTest">
                 <methods>
                     <include name="valid_login"/>
                     <include name="invalid_login"/>

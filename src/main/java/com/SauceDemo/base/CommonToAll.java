@@ -2,6 +2,7 @@ package com.SauceDemo.base;
 
 import com.SauceDemo.utils.PropertiesReader;
 import com.SauceDemo.utils.WaitHelpers;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
@@ -41,6 +42,7 @@ public class CommonToAll {
 
     public List<WebElement> item_list(By by)
     {
+        WaitHelpers.checkVisibility(getDriver(),by);
         return getDriver().findElements(by);
     }
 
@@ -48,5 +50,17 @@ public class CommonToAll {
     {
         Select select = new Select(driver.findElement(by));
         select.selectByVisibleText(option);
+    }
+
+    public String get_text(By by)
+    {
+        WaitHelpers.checkVisibility(getDriver(), by);
+        return getDriver().findElement(by).getText();
+    }
+
+    public void password_alert()
+    {
+        Alert alert = getDriver().switchTo().alert();
+        alert.accept();
     }
 }
