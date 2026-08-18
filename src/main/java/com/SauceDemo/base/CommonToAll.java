@@ -19,15 +19,11 @@ public class CommonToAll {
         getDriver().get(PropertiesReader.readKey("url"));
     }
 
-    public void enterUsername(By by, String username_val)
+    public void enterText(By by, String val)
     {
-        getDriver().findElement(by).sendKeys(username_val);
+        getDriver().findElement(by).sendKeys(val);
     }
 
-    public void enterPassword(By by, String password_val)
-    {
-        getDriver().findElement(by).sendKeys(password_val);
-    }
     public void Clickbutton(By by)
     {
         WaitHelpers.checkVisibility(getDriver(),by);

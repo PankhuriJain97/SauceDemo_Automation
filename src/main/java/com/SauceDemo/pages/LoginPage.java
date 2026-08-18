@@ -24,8 +24,8 @@ public class LoginPage extends CommonToAll {
     public void login(String username_val, String password_val) throws InterruptedException {
         openURL();
 
-        enterUsername(username, username_val);
-        enterPassword(password, password_val);
+        enterText(username, username_val);
+        enterText(password, password_val);
         Clickbutton(LoginButton);
         Thread.sleep(5000);
 

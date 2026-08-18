@@ -28,6 +28,7 @@ public class T3_CartTest extends CommonToAllTest {
 
         productPage = new ProductPage(getDriver());
         cartPage = new CartPage(getDriver());
+        checkoutPage = new CheckoutPage(getDriver());
     }
 
     @Test(description = "Verify cart page is displayed")
@@ -113,6 +114,6 @@ public class T3_CartTest extends CommonToAllTest {
         productPage.go_to_cart();
         cartPage.go_to_checkout();
 
-        Assert.assertTrue(checkoutPage.isCheckoutPageDisplayed());
+        Assert.assertTrue(checkoutPage.isCheckoutPageDisplayed(),"failed");
     }
 }

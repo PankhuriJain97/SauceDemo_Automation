@@ -22,6 +22,14 @@ public class dataProvider {
 
     @DataProvider(name = "checkoutData")
     public Object[][] checkoutData() {
-        return UtilExcel.getTestData("CheckoutData.xlsx", "Checkout");
+        return UtilExcel.getTestData("CheckoutData.xlsx", "InvalidData");
     }
+
+    @DataProvider(name = "validcheckoutData")
+    public Object[][] validcheckoutData() {
+        return UtilExcel.getTestData("CheckoutData.xlsx", "ValidData");
+    }
+
 }
+
+
