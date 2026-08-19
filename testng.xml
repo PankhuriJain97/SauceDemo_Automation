@@ -10,6 +10,40 @@
                     <include name="logout"/>
                 </methods>
             </class>
+            <class name="com.SauceDemo.tests.T2_ProductTest">
+                <methods>
+                    <include name="verify_pageDisplay"/>
+                    <include name="verify_product_count"/>
+                    <include name="verify_product_name"/>
+                    <include name="verify_product_sort_atoz"/>
+                    <include name="verify_product_sort_ztoa"/>
+                    <include name="verify_price_sort_LtoH"/>
+                    <include name="verify_price_sort_HtoL"/>
+                    <include name="verify_description"/>
+                    <include name="verify_prod_add"/>
+                    <include name="verify_prod_remove"/>
+                </methods>
+            </class>
+            <class name="com.SauceDemo.tests.T3_CartTest">
+                <methods>
+                    <include name="verify_cart_page"/>
+                    <include name="verify_prod_cart"/>
+                    <include name="verify_mult_prod"/>
+                    <include name="verify_prices"/>
+                    <include name="verify_remove_product"/>
+                    <include name="verify_cont_btn"/>
+                    <include name="verify_checkout_btn"/>
+                </methods>
+            </class>
+            <class name="com.SauceDemo.tests.T4_CheckoutTest">
+                <methods>
+                    <include name="verify_mandatory_fields"/>
+                    <include name="verify_valid_data"/>
+                    <include name="verify_added_products"/>
+                    <include name="verify_total_price"/>
+                    <include name="verify_order_completion"/>
+                </methods>
+            </class>
         </classes>
     </test>
 </suite>
